@@ -16,7 +16,7 @@ my $jsonDecoded = decode_json($data);
 my $hourBefore = DateTime->now();
 
 #now is in UTC, local time is UTC+2, to correct for PST we need to take -9 hours and then one more, -10 in total
-$hourBefore->subtract(minutes => 60*10); #now is in UTC, I'm in UTC+2, so if I add 60 minutes that will be minus one hour UTC)
+$hourBefore->subtract(minutes => 60*10);
 
 #just to get any results as it is now almost midnight PST
 $hourBefore->subtract(hours => 10);
