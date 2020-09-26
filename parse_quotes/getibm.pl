@@ -15,8 +15,8 @@ common::filesysFileToVariable("debug", ".\\data.json", \$data);
 my $jsonDecoded = decode_json($data);
 my $hourBefore = DateTime->now();
 
-#now is in UTC, so we need to first correct for PST (+9) and then take one hour (-1), so in total -8
-$hourBefore->subtract(minutes => 60*8); #now is in UTC, I'm in UTC+2, so if I add 60 minutes that will be minus one hour UTC)
+#now is in UTC, local time is UTC+2, to correct for PST we need to take -9 hours and then one more, -10 in total
+$hourBefore->subtract(minutes => 60*10); #now is in UTC, I'm in UTC+2, so if I add 60 minutes that will be minus one hour UTC)
 
 #just to get any results as it is now almost midnight PST
 $hourBefore->subtract(hours => 10);
